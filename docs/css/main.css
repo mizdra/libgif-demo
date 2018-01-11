@@ -1,0 +1,43 @@
+body {
+  font-size: 13px;
+}
+#headerBlock {
+  margin-left: 15px;
+}
+#option > div {
+  margin: 0 15px;
+  float: left;
+}
+#option + div {
+  clear: both;
+}
+#option > div > h2 {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.img {
+  max-width: 48px;
+  max-height: 48px;
+}
+div.select2-container, div.ui-buttonset, input.ui-button {
+  margin: 2px 0;
+}
+.ttl {
+  text-align: center;
+  border-bottom : #888 1px solid;
+}
+.body {
+  float: left;
+  margin: 40px 10px 10px;
+  border : #888 1px solid;
+  padding: 10px;
+}
+.body > div {
+  padding: 5px;
+}
+.log {
+  white-space: nowrap;
+}
+#fc2_footer {
+  clear: both;
+}

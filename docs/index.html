@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="Content-Language" content="ja" />
+        <title>libgif.js demo</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.3.0/select2.min.js"></script>
+        <script type="text/javascript" src="js/libgif-1.0beta.js"></script>
+        <script type="text/javascript" src="js/BinFileReader.js"></script>
+        <script type="text/javascript" src="js/base64.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://mizdra.web.fc2.com/css/default.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.3.0/select2.min.css" media="all" />
+        <script type="text/javascript" src="js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
+    </head>
+    <body>
+        <div id="headerBlock">
+            <h1>GIFをJavascriptで解凍/圧縮する</h1>
+        </div>
+        <div>
+
+            <div id="option">
+                <div>
+                    <h2>使用する画像</h2>
+                    <select id="imgPass">
+                        <option value="img/politoed-f.gif">politoed-f.gif</option>
+                        <option value="img/poliwrath.gif">poliwrath.gif</option>
+                        <option value="img/kingdra.gif">kingdra.gif</option>
+                        <option value="img/metagross.gif">metagross.gif</option>
+                        <option value="img/garchomp-f.gif">garchomp-f.gif</option>
+                        <option value="img/mamoswine-f.gif">mamoswine-f.gif</option>
+                        <option value="other" id="other">ファイルを選択</option>
+                    </select><br>
+                    <input type="file" id="file" accept="image/gif" disabled />
+                </div>
+
+                <div>
+                    <h2>表示モード</h2>
+                    <div id="mode">
+                        <input type="radio" name="out" id="unLZW" value="unLZW" checked="checked" /><label for="unLZW" title="画像を解凍します">解凍</label>
+                        <input type="radio" name="out" id="LZW" value="LZW" /><label for="LZW" title="画像を圧縮します。&#13;&#10;ただし、圧縮する前に解凍データを取得するため、一度解凍をします。">圧縮</label>
+                    </div>
+                </div>
+
+                <div>
+                    <h2>出力データ</h2>
+                    <div id="out">
+                        <input type="checkbox" id="time" checked="checked" /><label for="time" title="解凍/圧縮に掛かった時間を表示します">処理時間(ms)</label>
+                        <input type="checkbox" id="data" checked="checked" /><label for="data" title="解凍ならtable要素を、圧縮ならTable Based Image Dataブロックを表示します">LWZ解凍/圧縮 結果</label>
+                        <input type="checkbox" id="dictionary" /><label for="dictionary" title="解凍に使用した辞書を表示します。&#13;&#10;ただし、解凍時のみしか表示出来ません。">LWZ解凍/圧縮 辞書</label>
+                    </div>
+                </div>
+                <div>
+                    <h2>実行</h2>
+                    <button id="play">実行</button>
+                </div>
+            </div>
+
+
+            <div class="body"><div class="ttl">処理時間(ms)</div><div class="log"></div></div>
+            <div class="body"><div class="ttl">LWZ解凍 結果</div><div class="log"></div></div>
+            <div class="body"><div class="ttl">LWZ解凍 辞書</div><div class="log"></div></div>
+        </div>
+</body>
+</html>
